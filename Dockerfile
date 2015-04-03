@@ -7,6 +7,8 @@ ENV REFRESHED_AT 2015-03-22
 ENV MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128m"
 RUN apt-get -y install wget
 RUN apt-get -y install curl vim git maven 
+VOLUME ["/var/lib/tomcat7/webapps/"]
+WORKDIR /var/lib/tomcat7/webapps/
 # pull from GitHub
 # mvn war
 RUN git remote add emootime https://github.com/emooti/EmootiMe.git
