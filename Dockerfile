@@ -15,7 +15,8 @@ WORKDIR /home/emooti/helloemooti
 RUN touch /home/emooti/helloemooti/hello.txt
 RUN cd /home/emooti/helloemooti
 RUN git init
-RUN git remote add helloemooti https://github.com/emooti/HelloEmooti.git
+#RUN git remote add helloemooti https://github.com/emooti/HelloEmooti.git
+CMD ["git", "remote", "add", "helloemooti", "https://github.com/emooti/HelloEmooti.git"]
 RUN git pull helloemooti
 RUN mvn clean compile install
 # build war
