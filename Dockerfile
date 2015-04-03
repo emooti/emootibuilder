@@ -13,6 +13,7 @@ WORKDIR /var/lib/tomcat7/webapps/
 # mvn package
 RUN rm -R /home/helloemooti
 RUN mkdir /home/helloemooti
+RUN git remote add emootime https://github.com/emooti/HelloEmooti.git
 RUN rm -R /home/emootime
 RUN mkdir /home/emootime
 RUN cd /home/helloemooti
