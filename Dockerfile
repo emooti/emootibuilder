@@ -15,14 +15,14 @@ WORKDIR /home/emooti/helloemooti
 RUN touch /home/emooti/helloemooti/hello.txt
 RUN cd /home/emooti/helloemooti
 RUN git init
-RUN git remote add emootime https://github.com/emooti/HelloEmooti.git
+RUN git remote add helloemooti https://github.com/emooti/HelloEmooti.git
 RUN git pull helloemooti
 RUN mvn clean compile install
 # build war
-VOLUME ["/home/emooti/helloemooti"]
-WORKDIR /home/emooti/emootime
-RUN cd /home/emooti/emootime
-RUN git init
-RUN git remote add emootime https://github.com/emooti/EmootiMe.git
-RUN git pull emootime
-RUN mvn clean package
+#VOLUME ["/home/emooti/emootime"]
+#WORKDIR /home/emooti/emootime
+#RUN cd /home/emooti/emootime
+#RUN git init
+#RUN git remote add emootime https://github.com/emooti/EmootiMe.git
+#RUN git pull emootime
+#RUN mvn clean package
