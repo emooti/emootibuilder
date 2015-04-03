@@ -4,7 +4,21 @@ MAINTAINER Uta Kapp "utakapp@gmail.com"
 RUN apt-get -y update
 RUN apt-get -y install openjdk-7-jdk
 ENV REFRESHED_AT 2015-03-22
+ENV MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128m"
 RUN apt-get -y install wget
 RUN apt-get -y install curl vim git maven 
 # pull from GitHub
 # mvn war
+RUN git remote add emootime https://github.com/emooti/EmootiMe.git
+RUN rm -R /home/helloemooti
+RUN mkdir /home/helloemooti
+RUN cd /home/helloemooti
+RUN git init
+RUN git pull helloemooti
+RUN mvn clean compile install
+RUN rm -R /home/emootime
+RUN mkdir /home/emootime
+RUN cd /home/emootime
+RUN git init
+RUN git pull emootime
+RUN mvn clean package
