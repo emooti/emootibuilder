@@ -11,10 +11,10 @@ VOLUME ["/var/lib/tomcat7/webapps/"]
 WORKDIR /var/lib/tomcat7/webapps/
 # pull from GitHub
 # mvn package
-RUN rm -R /home/helloemooti
+RUN rm -Rf /home/helloemooti
 RUN mkdir /home/helloemooti
 RUN git remote add emootime https://github.com/emooti/HelloEmooti.git
-RUN rm -R /home/emootime
+RUN rm -Rf /home/emootime
 RUN mkdir /home/emootime
 RUN cd /home/helloemooti
 RUN git remote add emootime https://github.com/emooti/EmootiMe.git
