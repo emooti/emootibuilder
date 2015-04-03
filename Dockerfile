@@ -10,16 +10,16 @@ RUN apt-get -y install curl vim git maven
 VOLUME ["/var/lib/tomcat7/webapps/"]
 WORKDIR /var/lib/tomcat7/webapps/
 # pull from GitHub
-# mvn war
-RUN git remote add emootime https://github.com/emooti/EmootiMe.git
+# mvn package
 RUN rm -R /home/helloemooti
 RUN mkdir /home/helloemooti
+RUN rm -R /home/emootime
+RUN mkdir /home/emootime
 RUN cd /home/helloemooti
+RUN git remote add emootime https://github.com/emooti/EmootiMe.git
 RUN git init
 RUN git pull helloemooti
 RUN mvn clean compile install
-RUN rm -R /home/emootime
-RUN mkdir /home/emootime
 RUN cd /home/emootime
 RUN git init
 RUN git pull emootime
