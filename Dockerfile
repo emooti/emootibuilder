@@ -13,6 +13,7 @@ WORKDIR /home/emooti
 # build hellloemooti
 RUN rm -Rf /home/emooti/helloemooti
 RUN mkdir /home/emooti/helloemooti
+RUN touch /home/emooti/helloemooti/hello.txt
 RUN cd /home/emooti/helloemooti
 RUN git init
 RUN git remote add emootime https://github.com/emooti/HelloEmooti.git
