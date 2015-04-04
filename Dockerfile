@@ -4,7 +4,7 @@ MAINTAINER Uta Kapp "utakapp@gmail.com"
 RUN apt-get -y update
 RUN apt-get -y install openjdk-7-jdk
 ENV REFRESHED_AT 2015-03-22
-ENV MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128m"
+ENV MAVEN_OPTS="-Xms512m -Xmx4096m -XX:MaxPermSize=1024m"
 RUN apt-get -y install wget
 RUN apt-get -y install curl vim git maven 
 # VOLUME ["/home/emooti/helloemooti"]
