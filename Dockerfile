@@ -15,10 +15,12 @@ WORKDIR /home/emooti/helloemooti
 RUN touch /home/emooti/helloemooti/hello.txt
 RUN cd /home/emooti/helloemooti
 RUN git init
-#RUN git remote add helloemooti https://github.com/emooti/HelloEmooti.git
-CMD ["git", "remote", "add", "helloemooti", "https://github.com/emooti/HelloEmooti.git"]
-CMD ["git" "pull" "helloemooti"]
-CMD ["mvn" "clean" "compile" "install"]
+ENV GIT_DISCOVERY_ACROSS_FILESYSTEM 1
+RUN git remote add helloemooti https://github.com/emooti/HelloEmooti.git
+RUN git pull helloemooti
+# CMD ["git", "remote", "add", "helloemooti", "https://github.com/emooti/HelloEmooti.git"]
+# CMD ["git" "pull" "helloemooti"]
+# CMD ["mvn" "clean" "compile" "install"]
 # build war
 #VOLUME ["/home/emooti/emootime"]
 #WORKDIR /home/emooti/emootime
