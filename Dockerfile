@@ -18,7 +18,8 @@ RUN git init
 # CMD ["git" "init"]
 # ENV GIT_DISCOVERY_ACROSS_FILESYSTEM 1
 RUN git remote add helloemooti https://github.com/emooti/HelloEmooti.git
-RUN git pull helloemooti
+RUN git pull helloemooti HEAD
+RUN mvn clean compile install
 # CMD ["git", "remote", "add", "helloemooti", "https://github.com/emooti/HelloEmooti.git"]
 # CMD ["git" "pull" "helloemooti"]
 # CMD ["mvn" "clean" "compile" "install"]
