@@ -8,6 +8,7 @@ ENV MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128m"
 RUN apt-get -y install wget
 RUN apt-get -y install curl vim git maven 
 # VOLUME ["/home/emooti/helloemooti"]
+RUN mkdir /home/emooti
 RUN mkdir /home/emooti/helloemooti
 WORKDIR /home/emooti/helloemooti
 RUN git init
