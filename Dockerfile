@@ -7,19 +7,20 @@ ENV REFRESHED_AT 2015-03-22
 ENV MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128m"
 RUN apt-get -y install wget
 RUN apt-get -y install curl vim git maven 
-VOLUME ["/home/emooti/helloemooti"]
+# VOLUME ["/home/emooti/helloemooti"]
+RUN mkdir /home/emooti/helloemooti
 WORKDIR /home/emooti/helloemooti
+RUN git init
 # pull from GitHub
 # build hellloemooti
-# RUN mkdir /home/emooti/helloemooti
-CMD ["cd" "/home/emooti/helloemooti"]
-CMD ["git" "init"]
+# CMD ["cd" "/home/emooti/helloemooti"]
+# CMD ["git" "init"]
 # ENV GIT_DISCOVERY_ACROSS_FILESYSTEM 1
-# RUN git remote add helloemooti https://github.com/emooti/HelloEmooti.git
-# RUN git pull helloemooti
-CMD ["git", "remote", "add", "helloemooti", "https://github.com/emooti/HelloEmooti.git"]
-CMD ["git" "pull" "helloemooti"]
-CMD ["mvn" "clean" "compile" "install"]
+RUN git remote add helloemooti https://github.com/emooti/HelloEmooti.git
+RUN git pull helloemooti
+# CMD ["git", "remote", "add", "helloemooti", "https://github.com/emooti/HelloEmooti.git"]
+# CMD ["git" "pull" "helloemooti"]
+# CMD ["mvn" "clean" "compile" "install"]
 # build war
 #VOLUME ["/home/emooti/emootime"]
 #WORKDIR /home/emooti/emootime
