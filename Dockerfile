@@ -24,7 +24,7 @@ RUN git remote add emootime https://github.com/emooti/EmootiMe.git
 RUN git pull emootime HEAD
 RUN mvn -version
 # build war when executing container
-# ENTRYPOINT ["mvn" "clean" "package"]
+ENTRYPOINT ["/usr/share/maven/bin/mvn" "clean" "package"]
 CMD []
 #VOLUME ["/home/emooti/emootime"]
 
