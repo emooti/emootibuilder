@@ -25,7 +25,7 @@ WORKDIR /home/emooti/emootime
 RUN git init
 RUN git remote add emootime https://github.com/emooti/EmootiMe.git
 RUN git pull emootime HEAD
-RUN mvn clean package
+CMD ["mvn" "clean" "package"]
 # CMD ["git", "remote", "add", "helloemooti", "https://github.com/emooti/HelloEmooti.git"]
 # CMD ["git" "pull" "helloemooti"]
 # CMD ["mvn" "clean" "compile" "install"]
