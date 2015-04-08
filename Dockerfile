@@ -10,6 +10,7 @@ RUN apt-get -y install curl vim git maven
 RUN mkdir /home/emooti
 RUN mkdir /home/emooti/helloemooti
 WORKDIR /home/emooti/helloemooti
+VOLUME ["/home/emooti/emootime"]
 RUN git init
 # pull from GitHub
 # build hellloemooti
@@ -26,5 +27,5 @@ RUN mvn -version
 # build war when executing container
 ENTRYPOINT ["/usr/share/maven/bin/mvn" "clean" "package"]
 CMD []
-#VOLUME ["/home/emooti/emootime"]
+
 
