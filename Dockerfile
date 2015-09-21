@@ -15,7 +15,8 @@ RUN git init
 # build emootibantransformer
 RUN git remote add sprints https://github.com/emooti/sprints.git
 RUN git pull sprints HEAD
-RUN cd /home/emootibantransformer
+RUN ls -a
+RUN cd /home/emooti/emootibantransformer
 RUN mvn clean compile install
 VOLUME ["/home/emooti/emootiban"]
 WORKDIR /home/emooti/emootiban
