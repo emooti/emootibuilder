@@ -16,11 +16,11 @@ RUN git init
 RUN git remote add sprints https://github.com/emooti/sprints.git
 RUN git pull sprints HEAD
 RUN ls -a
-RUN cd /home/emooti/emootibantransformer
+RUN cd /home/emooti/Emootibantransformer
 RUN mvn clean compile install
-VOLUME ["/home/emooti/emootiban"]
-WORKDIR /home/emooti/emootiban
-RUN cd /home/emooti/emootiban
+VOLUME ["/home/emooti/EmootiBan"]
+WORKDIR /home/emooti/EmootiBan
+RUN cd /home/emooti/EmootiBan
 RUN mvn -version
 # build war when executing container
 ENTRYPOINT ["/usr/share/maven/bin/mvn" "clean" "package"]
