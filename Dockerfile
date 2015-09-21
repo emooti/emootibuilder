@@ -12,7 +12,7 @@ RUN mkdir /home/emooti
 RUN cd /home/emooti
 RUN git init
 # pull from GitHub
-# build emootibantransformer
+# build Emootibantransformer
 RUN git remote add sprints https://github.com/emooti/sprints.git
 RUN git pull sprints HEAD
 RUN ls -a
