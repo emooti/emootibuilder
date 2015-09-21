@@ -9,21 +9,17 @@ ENV GIT_DISCOVERY_ACROSS_FILESYSTEM 1
 RUN apt-get -y install wget
 RUN apt-get -y install curl vim git maven 
 RUN mkdir /home/emooti
-RUN mkdir /home/emooti/helloemooti
-WORKDIR /home/emooti/helloemooti
+RUN cd /home/emooti
 RUN git init
 # pull from GitHub
-# build hellloemooti
-RUN git remote add helloemooti https://github.com/emooti/HelloEmooti.git
-RUN git pull helloemooti HEAD
+# build emootibantransformer
+RUN git remote add sprints https://github.com/emooti/sprints.git
+RUN git pull sprints HEAD
+RUN cd /home/emootibantransformer
 RUN mvn clean compile install
-RUN mkdir /home/emooti/emootime
-VOLUME ["/home/emooti/emootime"]
-WORKDIR /home/emooti/emootime
-RUN cd /home/emooti/emootime
-RUN git init
-RUN git remote add emootime https://github.com/emooti/EmootiMe.git
-RUN git pull emootime HEAD
+VOLUME ["/home/emooti/emootiban"]
+WORKDIR /home/emooti/emootiban
+RUN cd /home/emooti/emootiban
 RUN mvn -version
 # build war when executing container
 ENTRYPOINT ["/usr/share/maven/bin/mvn" "clean" "package"]
