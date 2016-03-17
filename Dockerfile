@@ -4,7 +4,7 @@ FROM emooti/tutorbase
 MAINTAINER Uta Kapp "utakapp@gmail.com"
 RUN apt-get -y update
 
-ENV REFRESHED_AT 2016-02-29
+ENV REFRESHED_AT 2016-03-17
 ENV MAVEN_OPTS="-Xms512m -Xmx2048m -XX:MaxPermSize=512m"
 ENV GIT_DISCOVERY_ACROSS_FILESYSTEM 1
 RUN mkdir /emootitutor
