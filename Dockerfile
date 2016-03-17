@@ -17,6 +17,7 @@ RUN cd /emootitutor/Tutorial1/HelloEmooti && mvn clean compile install
 VOLUME ["/home/emootitutor/Tuiorial1/Sprint1"]
 WORKDIR /home/emootitutor/Tutorial1/Sprint1
 RUN cd /emootitutor/Tutorial1/Sprint1 && mvn clean package
+
 # build war when executing container
 #ENTRYPOINT ["/usr/share/maven/bin/mvn" "clean" "package"]
 #CMD [] 
