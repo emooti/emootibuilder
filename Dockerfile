@@ -10,7 +10,7 @@ ENV GIT_DISCOVERY_ACROSS_FILESYSTEM 1
 RUN mkdir /emootitutor
 RUN cd /emootitutor && pwd && git init && ls
 RUN git init
-#pull from GitHub
+# pull from GitHub
 # build Emootibantransformer
 RUN cd /emootitutor && git remote add emootitutor https://github.com/emooti/EmootiTutor.git && git pull emootitutor HEAD
 RUN cd /emootitutor/Tutorial1/HelloEmooti && mvn clean compile install
