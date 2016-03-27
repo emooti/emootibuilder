@@ -1,7 +1,7 @@
 # Dockerfile
 # GitHub and do a maven build it
 FROM emooti/tutorbase
-MAINTAINER Uta Kapp "utakapp@gmail.com"
+MAINTAINER Uta Kapp "uta.kapp@emooti.org"
 RUN apt-get -y update
 
 ENV REFRESHED_AT 2016-03-17
