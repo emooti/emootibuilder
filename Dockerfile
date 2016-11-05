@@ -1,5 +1,5 @@
 # Dockerfile
-# GitHub and do a maven build it
+# GitHub and do a maven build it now
 FROM emooti/tutorbase
 MAINTAINER Uta Kapp "uta.kapp@emooti.org"
 RUN apt-get -y update
